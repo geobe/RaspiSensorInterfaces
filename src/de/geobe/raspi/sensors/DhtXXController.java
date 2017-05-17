@@ -42,6 +42,7 @@ public class DhtXXController {
 
     public static final boolean DHT11 = false;
     public static final boolean DHT22 = !DHT11;
+    public static final int PIN = 3;
 
     private volatile long startRead;
     private volatile long tnow;
@@ -56,7 +57,7 @@ public class DhtXXController {
 
     private static final int N_BITS = 40;
     private static final int T_BE = 28;   //18
-    private final int dht = 0;
+    private int dht = 0;
     private final int trigger = 2;
 
     public int getDht() {
@@ -71,8 +72,16 @@ public class DhtXXController {
         this(false);
     }
 
+    public DhtXXController(int pin) {
+        this.dht = pin;
+    }
     public DhtXXController(boolean isDht22) {
         this.isDht22 = isDht22;
+    }
+
+    public DhtXXController(int pin, boolean isDht22) {
+        this.isDht22 = isDht22;
+        this.dht = pin;
     }
 
     public void stop() {
@@ -270,7 +279,8 @@ public class DhtXXController {
             return;
         }
 
-        DhtXXController controller = new DhtXXController(DHT11);
+        // choose the pin where controller is wired
+        DhtXXController controller = new DhtXXController(PIN, DHT11);
         ExecutorService executor = Executors.newFixedThreadPool(1);
 
         Gpio.pinMode(controller.getDht(), Gpio.INPUT);

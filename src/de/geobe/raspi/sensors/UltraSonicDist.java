@@ -53,8 +53,8 @@ public class UltraSonicDist {
             System.out.println(" ==>> GPIO SETUP FAILED");
             return;
         }
-        int pulse = 4;
-        int echo = 5;
+        int pulse = 25;
+        int echo = 27;
         int trigger = 6;
         float[] distance = new float[REPEAT];
         long start, delay[] = new long[REPEAT];

@@ -142,10 +142,10 @@ public class HcSr04Controller {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        int trigger = 4, echo = 5;
+        int trigger = 25, echo = 27;
         if (args.length > 0 && args.length != 2) {
             System.out.println("parameters: [int GPIO_trigger_pin, GPIO_echo_pin]");
-            System.out.println("defaults are 4, 5");
+            System.out.println("defaults are 25, 27");
             return;
         } else if (args.length == 2) {
             try {
@@ -153,7 +153,7 @@ public class HcSr04Controller {
                 echo = Integer.parseInt(args[1]);
             } catch (NumberFormatException ex) {
                 System.out.println("parameters: [int GPIO_trigger_pin, GPIO_echo_pin]");
-                System.out.println("defaults are 4, 5");
+                System.out.println("defaults are 25, 27");
                 return;
             }
         }
