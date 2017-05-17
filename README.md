@@ -8,4 +8,5 @@ on the GPIO interface:
 
 Classes use mostly pi4j for gpio access. Also [javolution-core](http://javolution.org/)
 is used for realtime reading of DHTxx sensor signals.
-![libraries](project-libraries.png "needed libraries")
+
+![libraries](project-libraries.jpg "needed libraries")
