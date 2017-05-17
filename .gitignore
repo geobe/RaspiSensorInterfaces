@@ -1,0 +1,6 @@
+/lib/
+/build/
+/dist/
+/nbproject/
+/test/
+/manifest.mf
